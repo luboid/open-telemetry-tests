@@ -26,13 +26,13 @@ namespace ConsoleNetApp
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddLogging();
-                    services.AddHostedService<Worker>();
                     services.AddHttpClient("MyClient", (client) =>
                     {
                         // start BackendWebApi project
                         client.BaseAddress = new Uri("https://localhost:7092");
                     });
                     services.AddAppInstrumentatins();
+                    services.AddHostedService<Worker>();
                 });
     }
 }
