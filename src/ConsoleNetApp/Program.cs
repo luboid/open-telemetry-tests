@@ -11,9 +11,6 @@ namespace ConsoleNetApp
         {
             var host = CreateHostBuilder(args).Build();
             await host.RunAsync();
-
-            Console.WriteLine("Hello, World!");
-            Console.ReadLine();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
