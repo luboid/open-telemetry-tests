@@ -1,4 +1,5 @@
-﻿https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/examples/tracing/
+﻿https://github.com/open-telemetry/opentelemetry-dotnet/
+https://github.com/open-telemetry/opentelemetry-collector-contrib/
 
 https://www.sumologic.com/blog/configure-opentelemetry-collector/
 https://www.meziantou.net/monitoring-a-dotnet-application-using-opentelemetry.htm

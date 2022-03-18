@@ -1,38 +1,49 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Diagnostics;
 
 // See https://aka.ms/new-console-template for more information
 namespace ConsoleNetApp
 {
     public static class Program
     {
-        public static async Task Main(string[] args)
+        static Program()
         {
-            var host = CreateHostBuilder(args).Build();
-            await host.RunAsync();
+            AppInstrumentatins.Configure();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, config) =>
-                {
-                    var env = hostingContext.HostingEnvironment;
+        public static async Task Main(string[] args)
+        {
+            var cts = new CancellationTokenSource();
+            Console.CancelKeyPress += (s, e) =>
+            {
+                cts.Cancel();
+            };
 
-                    config.AddEnvironmentVariables();
-                    config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-                    config.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
-                })
-                .ConfigureServices((hostContext, services) =>
+            try
+            {
+                while (!cts.Token.IsCancellationRequested)
                 {
-                    services.AddLogging();
-                    services.AddHttpClient("MyClient", (client) =>
+                    Counters.NumberCycles.Add(1);
+
+                    using (var activity = Source.ActivitySource.StartActivity("my.console.woker.activity"))
                     {
-                        // start BackendWebApi project
-                        client.BaseAddress = new Uri("https://localhost:7092");
-                    });
-                    services.AddAppInstrumentatins();
-                    services.AddHostedService<Worker>();
-                });
+                        activity?.SetTag("my.console.tag", 10);
+
+                        await WeatherForecast.GetAsync(cts.Token);
+                    }
+
+                    await Task.Delay(1000, cts.Token);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            Console.WriteLine("Press Enter to exit ...");
+            Console.ReadLine();
+        }
     }
 }

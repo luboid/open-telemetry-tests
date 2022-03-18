@@ -1,0 +1,45 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://localhost:44322/TestService.svc"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, ServiceReference1"
+    ],
+    "references": [
+      "Google.Protobuf, {Google.Protobuf, 3.15.5}",
+      "Grpc.Core.Api, {Grpc.Core.Api, 2.32.0}",
+      "Grpc.Net.Client, {Grpc.Net.Client, 2.32.0}",
+      "Grpc.Net.Common, {Grpc.Net.Common, 2.32.0}",
+      "Microsoft.AspNetCore.Http.Features, {Microsoft.AspNetCore.Http.Features, 2.1.1}",
+      "Microsoft.Extensions.Configuration, {Microsoft.Extensions.Configuration, 2.1.0}",
+      "Microsoft.Extensions.Configuration.Abstractions, {Microsoft.Extensions.Configuration.Abstractions, 2.1.0}",
+      "Microsoft.Extensions.Configuration.Binder, {Microsoft.Extensions.Configuration.Binder, 2.1.0}",
+      "Microsoft.Extensions.DependencyInjection.Abstractions, {Microsoft.Extensions.DependencyInjection.Abstractions, 2.1.0}",
+      "Microsoft.Extensions.FileProviders.Abstractions, {Microsoft.Extensions.FileProviders.Abstractions, 2.1.0}",
+      "Microsoft.Extensions.Hosting.Abstractions, {Microsoft.Extensions.Hosting.Abstractions, 2.1.0}",
+      "Microsoft.Extensions.Logging, {Microsoft.Extensions.Logging, 2.1.0}",
+      "Microsoft.Extensions.Logging.Abstractions, {Microsoft.Extensions.Logging.Abstractions, 3.0.3}",
+      "Microsoft.Extensions.Logging.Configuration, {Microsoft.Extensions.Logging.Configuration, 2.1.0}",
+      "Microsoft.Extensions.Options, {Microsoft.Extensions.Options, 2.1.0}",
+      "Microsoft.Extensions.Options.ConfigurationExtensions, {Microsoft.Extensions.Options.ConfigurationExtensions, 2.1.0}",
+      "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 2.1.1}",
+      "OpenTelemetry, {OpenTelemetry, 1.2.0-rc3}",
+      "OpenTelemetry.Api, {OpenTelemetry.Api, 1.2.0-rc3}",
+      "OpenTelemetry.Exporter.Console, {OpenTelemetry.Exporter.Console, 1.2.0-rc3}",
+      "OpenTelemetry.Exporter.OpenTelemetryProtocol, {OpenTelemetry.Exporter.OpenTelemetryProtocol, 1.2.0-rc3}",
+      "OpenTelemetry.Extensions.Hosting, {OpenTelemetry.Extensions.Hosting, 1.0.0-rc9}",
+      "OpenTelemetry.Instrumentation.AspNetCore, {OpenTelemetry.Instrumentation.AspNetCore, 1.0.0-rc9}",
+      "OpenTelemetry.Instrumentation.Http, {OpenTelemetry.Instrumentation.Http, 1.0.0-rc9}",
+      "System.Diagnostics.DiagnosticSource, {System.Diagnostics.DiagnosticSource, 6.0.0}",
+      "System.Runtime.CompilerServices.Unsafe, {System.Runtime.CompilerServices.Unsafe, 6.0.0}"
+    ],
+    "sync": true,
+    "targetFramework": "net6.0",
+    "typeReuseMode": "All"
+  }
+}

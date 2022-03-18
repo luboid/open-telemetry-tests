@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.ServiceModel;
+using OpenTelemetry.Contrib.Instrumentation.Wcf;
 
 namespace MvcNetCoreApp.Controllers
 {
@@ -59,7 +61,12 @@ namespace MvcNetCoreApp.Controllers
 
             activity1?.AddEvent(new ActivityEvent("My event 1...", DateTimeOffset.Now, new ActivityTagsCollection() { { "tag1", "tag val 11" } }));
 
-            await Task.Delay(500);
+            var wcfClient = new ServiceReference1.TestServiceClient(
+                new BasicHttpsBinding(BasicHttpsSecurityMode.Transport),
+                new EndpointAddress("https://localhost:44322/TestService.svc"));
+            wcfClient.Endpoint.EndpointBehaviors.Add(new TelemetryEndpointBehavior());
+
+            await wcfClient.GetDataAsync(100).ConfigureAwait(false);
 
             return View();
         }

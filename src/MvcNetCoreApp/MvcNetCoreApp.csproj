@@ -8,11 +8,21 @@
 
   <ItemGroup>
     <PackageReference Include="OpenTelemetry" Version="1.2.0-rc3" />
+    <PackageReference Include="OpenTelemetry.Contrib.Instrumentation.Wcf" Version="1.0.0-rc5" />
     <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.2.0-rc3" />
 	<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.2.0-rc3" />
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc9" />
     <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc9" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.8.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.8.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WcfService\WcfService.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,20 +13,6 @@
 		<PackageReference Include="OpenTelemetry" Version="1.2.0-rc3" />
 		<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.2.0-rc3" />
 		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.2.0-rc3" />
-		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc10" />
 		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc10" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Update="appsettings.Development.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </None>
-	  <None Update="appsettings.json">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-	  </None>
 	</ItemGroup>
 </Project>

@@ -32,6 +32,7 @@ namespace MvcNetCoreApp
                         .AddService(serviceName: Source.ServiceName, serviceVersion: Source.ServiceVersion))
                 .AddHttpClientInstrumentation()
                 .AddAspNetCoreInstrumentation()
+                .AddWcfInstrumentation()
                 .AddOtlpExporter((exporterOptions) =>
                 {
                     exporterOptions.Endpoint = new Uri(otelCollector.Uri);
