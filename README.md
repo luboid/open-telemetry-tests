@@ -5,7 +5,7 @@ You need to have a Docker installed
 
 Start a open telemetry collector within ./src/otel-collector with `docker compose up`.
 
-Then you can run different projects from solution, bear in mind that some projects depend form others.
+Then you can run different projects from solution, bear in mind that some projects depend on others.
 
 Sources:
 [opentelemetry-dotnet](https://github.com/open-telemetry/opentelemetry-dotnet/)
