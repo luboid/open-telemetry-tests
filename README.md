@@ -10,3 +10,6 @@ Then you can run different projects from solution, bear in mind that some projec
 Sources:
 [opentelemetry-dotnet](https://github.com/open-telemetry/opentelemetry-dotnet/)
 [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib/)
+
+
+![example](./docs/example.png)
